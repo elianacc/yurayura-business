@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 项目父模块基础设置 -->
+    <groupId>org.elianacc</groupId>
+    <artifactId>yurayura</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>yurayura-business-api-commons</module>
+        <module>yurayura-business-codegenerator</module>
+        <module>yurayura-business-core</module>
+        <module>yurayura-business-service</module>
+    </modules>
+
+    <!-- 项目父模块依赖版本统一设置 -->
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <!-- SpringBoot 整合第三方框架父依赖 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.12.RELEASE</version>
+    </parent>
+
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <url>http://localhost:8081/repository/yurayura-business-release/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>http://localhost:8081/repository/yurayura-business-snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
