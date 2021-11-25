@@ -73,6 +73,7 @@
     </dependencies>
 
     <build>
+        <finalName>yurayura-business-service</finalName>
         <resources>
             <!-- java文件夹下的xml也加入编译 -->
             <resource>
