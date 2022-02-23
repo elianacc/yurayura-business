@@ -2,8 +2,10 @@ package org.elianacc.yurayura.service.sys.manager;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.github.pagehelper.PageInfo;
+import org.elianacc.yurayura.dto.ManagerInsertDto;
 import org.elianacc.yurayura.dto.ManagerLoginDto;
 import org.elianacc.yurayura.dto.ManagerSelectDto;
+import org.elianacc.yurayura.dto.ManagerUpdateDto;
 import org.elianacc.yurayura.entity.sys.manager.Manager;
 
 import javax.servlet.http.HttpSession;
@@ -29,11 +31,10 @@ public interface IManagerService extends IService<Manager> {
     /**
      * 添加系统管理员
      *
-     * @param manager
-	 * @param permissionIdArr
+     * @param dto
      * @return java.lang.String
      */
-    public String insert(Manager manager, List<Integer> permissionIdArr);
+    public String insert(ManagerInsertDto dto);
 
     /**
      * 批量删除系统管理员（根据id组）
@@ -46,11 +47,10 @@ public interface IManagerService extends IService<Manager> {
     /**
      * 修改系统管理员
      *
-     * @param manager
-	 * @param permissionIdArr
+     * @param dto
      * @return java.lang.String
      */
-    public String update(Manager manager, List<Integer> permissionIdArr);
+    public String update(ManagerUpdateDto dto);
 
     /**
      * 系统管理员登入

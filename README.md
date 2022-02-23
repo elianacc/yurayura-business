@@ -6,7 +6,7 @@
 
 > 本项目为网站B端部分，旨在为B端页面展示部分提供数据查看及操作接口等支持
 >
-> 项目内全部接口按照了RESTful风格的API 设计规范，代码按照分布式多模块设计
+> 项目内代码分布按照分布式多模块设计，易于编写及修改，API设计规范参考RESTful风格
 >
 > B端页面展示部分-Vue CLI 4项目地址：https://github.com/elianacc/yurayura-business-vue
 
@@ -33,7 +33,7 @@ yurayura-business
 - ​    数据库连接池： HikariCP
 - ​    数据库： MySQL80
 - ​    NoSQL数据库： Redis
-- ​    在线接口文档生成： Swagger2 + knife4j-spring-ui
+- ​    在线接口文档生成： knife4j（swagger2增强）
 - ​    JSON处理工具： fastjson
 - ​    测试工具： junit5
 
