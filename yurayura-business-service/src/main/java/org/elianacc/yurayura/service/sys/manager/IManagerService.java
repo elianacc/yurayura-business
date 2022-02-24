@@ -2,14 +2,10 @@ package org.elianacc.yurayura.service.sys.manager;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.github.pagehelper.PageInfo;
-import org.elianacc.yurayura.dto.ManagerInsertDto;
-import org.elianacc.yurayura.dto.ManagerLoginDto;
-import org.elianacc.yurayura.dto.ManagerSelectDto;
-import org.elianacc.yurayura.dto.ManagerUpdateDto;
+import org.elianacc.yurayura.dto.*;
 import org.elianacc.yurayura.entity.sys.manager.Manager;
 
 import javax.servlet.http.HttpSession;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -37,12 +33,12 @@ public interface IManagerService extends IService<Manager> {
     public String insert(ManagerInsertDto dto);
 
     /**
-     * 批量删除系统管理员（根据id组）
+     * 批量删除系统管理员（根据系统管理员id组）
      *
-     * @param ids
+     * @param dto
      * @return void
      */
-    public void deleteBatchByIds(List<Integer> ids);
+    public void deleteBatchByIds(IdsDto dto);
 
     /**
      * 修改系统管理员

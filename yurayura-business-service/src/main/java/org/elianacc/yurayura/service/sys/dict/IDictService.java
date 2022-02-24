@@ -35,7 +35,7 @@ public interface IDictService extends IService<Dict> {
     public String insert(DictInsertDto dto);
 
     /**
-     * 批量删除系统数据字典（根据id组）
+     * 批量删除系统数据字典（根据系统数据字典id组）
      *
      * @param dto
      * @return void

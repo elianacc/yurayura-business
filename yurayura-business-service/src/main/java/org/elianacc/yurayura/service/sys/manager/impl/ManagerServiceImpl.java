@@ -13,10 +13,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.elianacc.yurayura.dao.sys.manager.ManagerMapper;
 import org.elianacc.yurayura.dao.sys.permission.PermissionMapper;
-import org.elianacc.yurayura.dto.ManagerInsertDto;
-import org.elianacc.yurayura.dto.ManagerLoginDto;
-import org.elianacc.yurayura.dto.ManagerSelectDto;
-import org.elianacc.yurayura.dto.ManagerUpdateDto;
+import org.elianacc.yurayura.dto.*;
 import org.elianacc.yurayura.entity.sys.manager.Manager;
 import org.elianacc.yurayura.enumerate.EnableStatusEnum;
 import org.elianacc.yurayura.service.sys.manager.IManagerService;
@@ -86,8 +83,8 @@ public class ManagerServiceImpl extends ServiceImpl<ManagerMapper, Manager> impl
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void deleteBatchByIds(List<Integer> ids) {
-        managerMapper.deleteBatchIds(ids);
+    public void deleteBatchByIds(IdsDto dto) {
+        managerMapper.deleteBatchIds(dto.getIds());
     }
 
     @Transactional(rollbackFor = Exception.class)
