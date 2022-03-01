@@ -63,7 +63,7 @@ public class CodeGenerator {
                 // 注入配置(InjectionConfig)
                 .injectionConfig(builder -> {
                     Map<String, Object> parmMap = new HashMap<>();
-                    parmMap.put("sysFlag", generatorTable.get().contains("_sys_") ? "/sys/" : "/");
+                    parmMap.put("sysModulePath", generatorTable.get().contains("_sys_") ? "/sys/" : "/");
                     parmMap.put("packageParentPath", "org.elianacc.yurayura");
                     builder.customMap(parmMap);
                 })

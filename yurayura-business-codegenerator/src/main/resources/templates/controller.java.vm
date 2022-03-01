@@ -31,7 +31,7 @@ import ${superControllerClassPackage};
 #else
 @Controller
 #end
-@RequestMapping("/api${sysFlag}#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end")
+@RequestMapping("/api${sysModulePath}#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end")
 #if(${kotlin})
 class ${table.controllerName}#if(${superControllerClass}) : ${superControllerClass}()#end
 
