@@ -68,13 +68,27 @@ public class CodeGenerator {
                     builder.customMap(parmMap);
                 })
                 // 策略配置(StrategyConfig)
-                .strategyConfig(builder -> builder
-                        .addInclude(generatorTable.get())
-                        .addTablePrefix(generatorTable.get().contains("_sys_") ? "yurayura_sys_" : "yurayura_")
-                        .entityBuilder().enableLombok().enableTableFieldAnnotation()
-                        .controllerBuilder().enableRestStyle()
-                        .mapperBuilder().enableBaseResultMap().enableBaseColumnList()
-                )
+                .strategyConfig(builder -> {
+                    String tablePrefix = generatorTable.get().contains("_sys_") ? "yurayura_sys_" : "yurayura_";
+                    String filePrefix = generatorTable.get().contains("_sys_") ? "Sys" : "";
+                    builder.addInclude(generatorTable.get())
+                            .addTablePrefix(tablePrefix)
+                            .entityBuilder()
+                            .enableLombok()
+                            .enableTableFieldAnnotation()
+                            .formatFileName(filePrefix + "%s")
+                            .mapperBuilder()
+                            .enableBaseResultMap()
+                            .enableBaseColumnList()
+                            .formatXmlFileName(filePrefix + "%sMapper")
+                            .formatMapperFileName(filePrefix + "%sMapper")
+                            .serviceBuilder()
+                            .formatServiceImplFileName(filePrefix + "%sServiceImpl")
+                            .formatServiceFileName(filePrefix + "%sService")
+                            .controllerBuilder()
+                            .enableRestStyle()
+                            .formatFileName(filePrefix + "%sController");
+                })
                 .execute();
     }
 
