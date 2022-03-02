@@ -84,7 +84,7 @@ public class CodeGenerator {
                             .formatMapperFileName(filePrefix + "%sMapper")
                             .serviceBuilder()
                             .formatServiceImplFileName(filePrefix + "%sServiceImpl")
-                            .formatServiceFileName(filePrefix + "%sService")
+                            .formatServiceFileName("I" + filePrefix + "%sService")
                             .controllerBuilder()
                             .enableRestStyle()
                             .formatFileName(filePrefix + "%sController");
