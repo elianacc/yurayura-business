@@ -27,6 +27,7 @@ yurayura-business
 - ​    自动生成代码工具： mybatis plus generator（mpg）
 - ​    分页工具： mybatis pagehelper
 - ​    权限认证授权框架： shiro
+- ​    分布式锁：lock4j
 - ​    日志： logback
 - ​    项目构建： Maven
 - ​    代码简化工具： lombok
@@ -41,7 +42,7 @@ yurayura-business
 
 - ​    全局捕获异常处理
 - ​    AOP统一处理Web请求日志
-- ​    防止重复提交操作
+- ​    防止重复提交表单数据
 - ​    分布式session共享
 - ​    外部静态资源访问处理
 - ​    通用接口返回信息处理
