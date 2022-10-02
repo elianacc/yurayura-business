@@ -4,18 +4,20 @@ server:
   port: 2333
   # SpringBoot内嵌tomcat配置
   tomcat:
-    # 请求编码
+    # uri编码
     uri-encoding: UTF-8
-    # 队列长度
-    accept-count: 200
-    # 最大连接数
-    max-connections: 20000
-    # 连接建立超时时间
-    connection-timeout: 10000
-    # 最小,最大线程数
+    # 连接建立超时时间（单位：ms）
+    connection-timeout: 12000
+    # 最大等待队列长度：每个请求使用一个线程，线程数超过最大链接数后请求会进入等待队列，直到有线程处理
+    accept-count: 1000
+    # 线程数设置
     threads:
-      min-spare: 10
-      max: 1000
+      # 最小线程数：SpringBoot启动时初始化的线程数量
+      min-spare: 100
+      # 最大线程数：可以设为CPU线程数的200~250倍
+      max: 500
+    # 最大连接数：Tomcat同一时间能接受的最大线程数量，需要大等于 max-threads + accept-count
+    max-connections: 1500
   # 编码配置（编码过滤器）
   servlet:
     encoding:
